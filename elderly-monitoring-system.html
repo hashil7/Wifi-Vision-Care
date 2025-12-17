@@ -1,0 +1,714 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WiFi Vision | Smart Elderly Monitoring System</title>
+    <meta name="description" content="Revolutionary elderly monitoring using existing WiFi signals. No cameras, no sensors needed. Privacy-focused, reliable monitoring for your loved ones.">
+    <meta name="keywords" content="elderly monitoring, WiFi vision, fall detection, senior care, home monitoring, privacy-first, wireless monitoring">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2563eb",
+                        secondary: "#1e40af",
+                        accent: "#3b82f6",
+                        dark: "#1e293b",
+                        light: "#f8fafc"
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .problem-card {
+            transition: all 0.3s ease;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .solution-card {
+            transition: all 0.3s ease;
+        }
+        
+        .solution-card:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-sm">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-wifi text-white text-xl"></i>
+                    </div>
+                    <span class="text-2xl font-bold text-gray-800">WiFi<span class="text-blue-600">Vision</span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="#problems" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Problems</a>
+                    <a href="#solution" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Solution</a>
+                    <a href="#features" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Features</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium transition-colors">Contact</a>
+                </div>
+                
+                <button class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+                
+                <div class="hidden md:block">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-blue-700 transition-colors">
+                        Get Started
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white">
+        <div class="container mx-auto px-4 py-16 md:py-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                        Revolutionizing Elderly Care with <span class="text-yellow-300">WiFi Vision</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-blue-100">
+                        Monitor your loved ones using existing WiFi signals. No cameras, no sensors needed. 
+                        Privacy-focused, reliable monitoring that works everywhere in the home.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
+                            <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                        </button>
+                        <button class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-700 transition-colors">
+                            <i class="fas fa-shopping-cart mr-2"></i> Order Now
+                        </button>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+                        <div class="relative">
+                            <img src="https://picsum.photos/600/400?random=1" alt="WiFi Vision monitoring system dashboard" class="rounded-xl shadow-2xl">
+                            <div class="absolute -top-4 -right-4 bg-green-500 text-white px-4 py-2 rounded-full font-semibold animate-pulse-slow">
+                                <i class="fas fa-heartbeat mr-2"></i> Active Monitoring
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems with Traditional Methods -->
+    <section id="problems" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    The Problems with Traditional Monitoring
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Current elderly monitoring solutions are intrusive, expensive, and full of limitations
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Problem 1: Too Many Sensors -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-sensor text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Sensor Overload</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Traditional systems require multiple sensors in every room - motion sensors, pressure mats, 
+                        door sensors, and more. This creates a complex, expensive setup that's difficult to maintain.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>High installation costs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Frequent battery replacements</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Complex maintenance</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Problem 2: Camera Blind Spots -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-video-slash text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Camera Blind Spots</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Cameras can't see through walls, doors, or furniture. They miss critical areas like 
+                        bathrooms, behind furniture, or during nighttime when lights are off.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Privacy concerns in bathrooms/bedrooms</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Limited coverage areas</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Poor performance in low light</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Problem 3: Privacy Invasion -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-user-secret text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Privacy Invasion</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Cameras and audio recording devices invade personal privacy, making seniors feel 
+                        constantly watched and uncomfortable in their own homes.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Loss of dignity and independence</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Security risks from hacked cameras</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Psychological discomfort</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Problem 4: High False Alarms -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-bell-slash text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">False Alarms</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Traditional systems generate frequent false alarms from pets, visitors, or normal 
+                        movement patterns, leading to alert fatigue and missed real emergencies.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Caregiver alert fatigue</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Missed real emergencies</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Unnecessary emergency calls</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Problem 5: Limited Mobility Tracking -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-walking text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Limited Mobility Tracking</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Wearable devices can be forgotten, removed, or lost. They don't provide comprehensive 
+                        mobility analysis or early warning signs of health decline.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Devices forgotten or removed</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>No comprehensive mobility analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Limited battery life</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Problem 6: Complex Installation -->
+                <div class="problem-card bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <div class="flex items-start mb-4">
+                        <div class="bg-red-100 p-3 rounded-lg mr-4">
+                            <i class="fas fa-tools text-red-600 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-800">Complex Installation</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Most systems require professional installation, drilling holes, running wires, and 
+                        complex configuration that disrupts the home environment.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Professional installation required</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Home disruption during setup</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-times text-red-500 mr-2"></i>
+                            <span>Difficult to relocate or expand</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WiFi Vision Solution -->
+    <section id="solution" class="py-16 bg-gradient-to-br from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    The WiFi Vision Solution
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Using existing WiFi signals to create a comprehensive, privacy-focused monitoring system
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <div class="mb-8">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-blue-100 p-3 rounded-lg mr-4">
+                                <i class="fas fa-wifi text-blue-600 text-2xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">How It Works</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6">
+                            WiFi Vision technology analyzes the subtle changes in your existing WiFi signals 
+                            caused by human movement. It can detect falls, monitor activity patterns, and 
+                            track mobility - all without cameras or additional sensors.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Uses Existing WiFi</h4>
+                                    <p class="text-gray-600">No new infrastructure needed - works with your current router</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Wall-Penetrating</h4>
+                                    <p class="text-gray-600">Sees through walls and furniture - no blind spots</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-green-100 p-2 rounded-full mr-4 mt-1">
+                                    <i class="fas fa-check text-green-600"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Privacy-First</h4>
+                                    <p class="text-gray-600">No video or audio recording - only movement patterns</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <div class="bg-white rounded-2xl shadow-xl p-8">
+                        <div class="relative mb-6">
+                            <img src="https://picsum.photos/600/400?random=2" alt="WiFi signal visualization showing movement detection" class="rounded-lg">
+                            <div class="absolute bottom-4 left-4 bg-blue-600 text-white px-4 py-2 rounded-lg">
+                                <i class="fas fa-chart-line mr-2"></i> Real-time Activity Monitoring
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-blue-50 p-4 rounded-lg text-center">
+                                <div class="text-2xl font-bold text-blue-700 mb-1">100%</div>
+                                <div class="text-sm text-gray-600">Home Coverage</div>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg text-center">
+                                <div class="text-2xl font-bold text-green-700 mb-1">24/7</div>
+                                <div class="text-sm text-gray-600">Monitoring</div>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg text-center">
+                                <div class="text-2xl font-bold text-purple-700 mb-1">0</div>
+                                <div class="text-sm text-gray-600">Cameras Needed</div>
+                            </div>
+                            <div class="bg-orange-50 p-4 rounded-lg text-center">
+                                <div class="text-2xl font-bold text-orange-700 mb-1">5-min</div>
+                                <div class="text-sm text-gray-600">Setup Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    Key Features & Benefits
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    Everything you need for comprehensive, respectful elderly monitoring
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-blue-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-user-shield text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Privacy Protection</h3>
+                    <p class="text-gray-600 mb-4">
+                        No cameras mean complete privacy. Your loved ones maintain their dignity while staying safe.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>No video recording</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>No audio recording</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Encrypted data transmission</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-green-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Complete Home Coverage</h3>
+                    <p class="text-gray-600 mb-4">
+                        WiFi signals penetrate walls, providing coverage in every room including bathrooms and closets.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>No blind spots</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Works day and night</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Through-wall detection</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-purple-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-exclamation-triangle text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Advanced Fall Detection</h3>
+                    <p class="text-gray-600 mb-4">
+                        AI-powered algorithms detect falls with 95% accuracy and immediately alert caregivers.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Instant emergency alerts</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Low false positive rate</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Location-specific alerts</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-orange-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-orange-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Activity Pattern Analysis</h3>
+                    <p class="text-gray-600 mb-4">
+                        Track daily routines and detect deviations that may indicate health issues or cognitive decline.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Sleep pattern monitoring</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Mobility trend analysis</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Early warning indicators</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-red-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-plug text-red-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Plug & Play Setup</h3>
+                    <p class="text-gray-600 mb-4">
+                        Simply plug in our device, connect to your WiFi, and start monitoring in minutes.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>No professional installation</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Mobile app configuration</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Easy relocation</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="solution-card bg-white border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-lg">
+                    <div class="bg-indigo-100 w-14 h-14 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-indigo-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Smart Notifications</h3>
+                    <p class="text-gray-600 mb-4">
+                        Receive intelligent alerts via mobile app, SMS, or email based on severity and time of day.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Customizable alert rules</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Multiple caregiver support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Emergency contact integration</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+                    WiFi Vision vs Traditional Methods
+                </h2>
+                <p class="text-gray-600 text-lg max-w-3xl mx-auto">
+                    See how our technology outperforms conventional monitoring solutions
+                </p>
+            </div>
+            
+            <div class="overflow-x-auto rounded-xl shadow-lg">
+                <table class="w-full bg-white">
+                    <thead>
+                        <tr class="bg-blue-600 text-white">
+                            <th class="text-left p-6 font-semibold">Feature</th>
+                            <th class="text-center p-6 font-semibold">WiFi Vision</th>
+                            <th class="text-center p-6 font-semibold">Camera Systems</th>
+                            <th class="text-center p-6 font-semibold">Wearable Sensors</th>
+                            <th class="text-center p-6 font-semibold">Motion Sensors</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-gray-200">
+                            <td class="p-6 font-medium text-gray-800">Privacy Protection</td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> Excellent
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-times mr-1"></i> Poor
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> Moderate
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> Good
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="p-6 font-medium text-gray-800">Home Coverage</td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> 100%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-times mr-1"></i> 40-60%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> 70-80%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> 50-70%
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b border-gray-200">
+                            <td class="p-6 font-medium text-gray-800">Installation Complexity</td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> Easy
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-times mr-1"></i> Complex
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> Easy
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> Moderate
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b border-gray-200 bg-gray-50">
+                            <td class="p-6 font-medium text-gray-800">Fall Detection Accuracy</td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> 95%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> 75%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> 90%
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-times mr-1"></i> 60%
+                                </span>
+                            </td>
+                        </tr>
+                        
+                        <tr class="border-b border-gray-200">
+                            <td class="p-6 font-medium text-gray-800">Cost (First Year)</td>
+                            <td class="p-6 text-center">
+                                <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-check mr-1"></i> $299
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-times mr-1"></i> $800+
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-medium">
+                                    <i class="fas fa-minus mr-1"></i> $400
+                                </span>
+                            </td>
+                            <td class="p-6 text-center">
+                                <span class="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font
